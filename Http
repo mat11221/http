@@ -1,8 +1,0 @@
-HttpClient client = new HttpClient();
-  var data = createSamplePayment().toJson();
-  var request = await client.openUrl('POST', Uri.parse(serverEndpoint + '/paymentrequests'));
-  request.headers.set(HttpHeaders.contentTypeHeader, 'APPLICATION/JSON');
-  request.write(json.encode(data));
-  var response = await request.close();
-  String reply = await response.transform(utf8.decoder).join();
-  print(reply);
